@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1647830145 source:d:\aiubseventhseme2022(spring)\finalterm\computergraphics\project\audio files\finalproject\main.cpp
+	<cstdio>
+	<windows.h>
+	<math.h>
+	<vector>
+	<cstdlib>
+	<GL/gl.h>
+	<GL/glut.h>
+	<MMSystem.h>
+
