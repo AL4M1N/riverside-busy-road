@@ -1,1 +1,0 @@
-Village and City Life
