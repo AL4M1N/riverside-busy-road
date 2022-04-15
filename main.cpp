@@ -84,6 +84,34 @@ void river(){
 }
 
 
+void mountain()
+{
+    glColorMaterial ( GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE ) ;
+    glEnable ( GL_COLOR_MATERIAL ) ;
+    glBegin(GL_TRIANGLES);
+     glColor3f(0.0, 0.5, 0.0);
+     glVertex2f(-1.0f, -1.0f);
+     glColor3f(1.0, 1.0, 1.0);
+     glVertex2f(0.0f, 1.0f);
+     glColor3f(0.0, 0.5, 0.0);
+     glVertex2f(1.0f, -1.0f);
+    glEnd();
+}
+void mountains()
+{
+    glPushMatrix();
+    glLoadIdentity();
+    glScalef(0.3f, 0.3f, 0.0f);
+    glTranslatef(-2.6f, 1.45f,0.0f);
+    mountain();
+    glTranslatef(0.8f, 0.0f,0.0f);
+    mountain();
+    glTranslatef(3.5f, 0.0f,0.0f);
+    mountain();
+    glPopMatrix();
+}
+
+
 void myInit (void){
     glClearColor(1.0, 1.0, 1.0, 0.0);
     glColor3f(0.0f, 0.0f, 0.0f);
@@ -101,6 +129,7 @@ void myDisplay(void){
     road();
     field_2();
     river();
+    mountains();
 
     glFlush();
 }
@@ -122,4 +151,5 @@ int main(int argc, char** argv){
     myInit ();
     glutIdleFunc(Idle);
     glutMainLoop();
+
 }
