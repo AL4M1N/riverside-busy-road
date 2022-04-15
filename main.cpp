@@ -83,6 +83,125 @@ void river(){
     glEnd();
 }
 
+void cloud_struct()
+{
+        glColor3f(1.000, 1.000, 1.000);
+        glScalef(0.6,1,1);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.075;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+        glEnd();
+}
+
+
+void cloud_left(){
+    //Cloud on the left
+    glLoadIdentity(); //Reset the drawing perspective
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(-0.78,0.82,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(-0.74,0.87,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(-0.70,0.91,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(-0.65,0.88,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(-0.61,0.80,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(-0.68,0.77,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(-0.75,0.78,0);
+    cloud_struct();
+    glPopMatrix();
+}
+
+void cloud_right(){
+    //Cloud on the right
+    glLoadIdentity(); //Reset the drawing perspective
+	glMatrixMode(GL_MODELVIEW);
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.78,0.70,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.74,0.75,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.70,0.79,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.65,0.76,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.61,0.76,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.68,0.65,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.63,0.66,0);
+    cloud_struct();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.75,0.66,0);
+    cloud_struct();
+    glPopMatrix();
+}
+
 
 void myInit (void){
     glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -101,6 +220,8 @@ void myDisplay(void){
     road();
     field_2();
     river();
+    cloud_left();
+    cloud_right();
 
     glFlush();
 }
@@ -122,5 +243,4 @@ int main(int argc, char** argv){
     myInit ();
     glutIdleFunc(Idle);
     glutMainLoop();
-    
 }
