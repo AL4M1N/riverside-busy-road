@@ -37,17 +37,6 @@ void field_1(){
 }
 
 
-void road(){
-    //Main road lane 1
-    glBegin(GL_QUADS);
-    glColor3f(0.412, 0.412, 0.412);
-    glVertex2f(-1.0, -0.05);
-    glVertex2f(-1.0, -0.57);
-    glVertex2f(1.0, -0.57);
-    glVertex2f(1.0, -0.05);
-    glEnd();
-}
-
 void field_2(){
 
     //field 2
@@ -83,33 +72,42 @@ void river(){
     glEnd();
 }
 
-
-void mountain()
+void roadStrips()
 {
-    glColorMaterial ( GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE ) ;
-    glEnable ( GL_COLOR_MATERIAL ) ;
-    glBegin(GL_TRIANGLES);
-     glColor3f(0.0, 0.5, 0.0);
-     glVertex2f(-1.0f, -1.0f);
-     glColor3f(1.0, 1.0, 1.0);
-     glVertex2f(0.0f, 1.0f);
-     glColor3f(0.0, 0.5, 0.0);
-     glVertex2f(1.0f, -1.0f);
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2f(-0.95, -0.30);
+    glVertex2f(-0.95, -0.32);
+    glVertex2f(-0.65, -0.32);
+    glVertex2f(-0.65, -0.30);
     glEnd();
 }
-void mountains()
-{
+
+void road(){
+    //Main road lane 1
+    glBegin(GL_QUADS);
+    glColor3f(0.412, 0.412, 0.412);
+    glVertex2f(-1.0, -0.12);
+    glVertex2f(-1.0, -0.50);
+    glVertex2f(1.0, -0.50);
+    glVertex2f(1.0, -0.12);
+    glEnd();
+    //Main Road Strips 1
+    roadStrips();
+
+    //Main Road Strips 2
     glPushMatrix();
-    glLoadIdentity();
-    glScalef(0.3f, 0.3f, 0.0f);
-    glTranslatef(-2.6f, 1.45f,0.0f);
-    mountain();
-    glTranslatef(0.8f, 0.0f,0.0f);
-    mountain();
-    glTranslatef(3.5f, 0.0f,0.0f);
-    mountain();
+    glTranslatef(0.40,0,0);
+    roadStrips();
+    glTranslatef(0.40,0,0);
+    roadStrips();
+    glTranslatef(0.40,0,0);
+    roadStrips();
+    glTranslatef(0.40,0,0);
+    roadStrips();
     glPopMatrix();
 }
+
 
 
 void myInit (void){
@@ -129,7 +127,7 @@ void myDisplay(void){
     road();
     field_2();
     river();
-    mountains();
+    road();
 
     glFlush();
 }
