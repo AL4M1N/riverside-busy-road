@@ -243,4 +243,6 @@ int main(int argc, char** argv){
     myInit ();
     glutIdleFunc(Idle);
     glutMainLoop();
+    
 }
+
