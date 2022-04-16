@@ -36,7 +36,6 @@ void field_1(){
     glEnd();
 }
 
-
 void road(){
     //Main road lane 1
     glBegin(GL_QUADS);
@@ -83,31 +82,212 @@ void river(){
     glEnd();
 }
 
-
-void mountain()
+void tree1()
 {
-    glColorMaterial ( GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE ) ;
-    glEnable ( GL_COLOR_MATERIAL ) ;
-    glBegin(GL_TRIANGLES);
-     glColor3f(0.0, 0.5, 0.0);
-     glVertex2f(-1.0f, -1.0f);
-     glColor3f(1.0, 1.0, 1.0);
-     glVertex2f(0.0f, 1.0f);
-     glColor3f(0.0, 0.5, 0.0);
-     glVertex2f(1.0f, -1.0f);
+    glBegin(GL_POLYGON);
+    glColor3f(0.824, 0.412, 0.118);
+    glVertex2f(-0.84, -0.65);
+    glVertex2f(-0.81, -0.65);
+    glVertex2f(-0.82, -0.45);
+    glVertex2f(-0.83, -0.45);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.0, 0.5, 0.0);
+    glVertex2f(-0.88, -0.50);
+    glColor3f(0.0, 0.5, 0.0);
+    glVertex2f(-0.77, -0.50);
+    glColor3f(0.196, 0.804, 0.196);
+    glVertex2f(-0.825, -0.30);
     glEnd();
 }
-void mountains()
+
+void circle_tree()
+{
+    glBegin(GL_POLYGON);
+    glColor3f(0.824, 0.412, 0.118);
+    glVertex2f(-0.59, -0.65);
+    glVertex2f(-0.56, -0.65);
+    glVertex2f(-0.57, -0.45);
+    glVertex2f(-0.58, -0.45);
+    glEnd();
+
+    glPushMatrix();
+        glTranslatef(-0.595,-0.45,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.000, 1.000, 0.000);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.065;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(-0.555,-0.45,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.000, 1.000, 0.000);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.065;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(-0.575,-0.385,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.000, 1.000, 0.000);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.065;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+}
+
+void flower_tree()
 {
     glPushMatrix();
+        glTranslatef(-0.20, -0.625,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.824, 0.412, 0.118);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.030;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(-0.22, -0.625,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.824, 0.412, 0.118);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.030;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(-0.24, -0.595,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.133, 0.545, 0.133);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.0425;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(-0.18, -0.595,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.133, 0.545, 0.133);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.0425;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+        glTranslatef(-0.210, -0.570,0);
+        glScalef(0.6,1,1);
+        glColor3f(0.133, 0.545, 0.133);
+        glBegin(GL_POLYGON);
+        for(int i=0;i<200;i++)
+        {
+            float pi=3.1416;
+            float A=(i*2*pi)/200;
+            float r=0.0435;
+            float x = r * cos(A);
+            float y = r * sin(A);
+            glVertex2f(x,y );
+        }
+    glEnd();
+    glPopMatrix();
+}
+void park_tree()
+{
+    //Tree1
+    tree1();
+    //tree2
+    circle_tree();
+
+    //Park Tree 3
+    glPushMatrix();
     glLoadIdentity();
-    glScalef(0.3f, 0.3f, 0.0f);
-    glTranslatef(-2.6f, 1.45f,0.0f);
-    mountain();
-    glTranslatef(0.8f, 0.0f,0.0f);
-    mountain();
-    glTranslatef(3.5f, 0.0f,0.0f);
-    mountain();
+    glTranslatef(0.45f, 0.0f, 0.0f);
+    tree1();
+
+    //Flower Tree 1
+    glLoadIdentity();
+    flower_tree();
+
+    //Flower Tree 2
+
+    glTranslatef(0.42f, 0.0f, 0.0f);
+    flower_tree();
+
+     //tree 4
+     glLoadIdentity();
+     glTranslatef(1.2f, 0.0f, 0.0f);
+     tree1();
+
+    //Tree 5
+    glLoadIdentity();
+    glTranslatef(1.16f, 0.0f, 0.0f);
+    circle_tree();
+
+    //Tree 6
+    glLoadIdentity();
+    glTranslatef(1.6f, 0.0f, 0.0f);
+    tree1();
+    glLoadIdentity();
     glPopMatrix();
 }
 
@@ -129,7 +309,7 @@ void myDisplay(void){
     road();
     field_2();
     river();
-    mountains();
+    park_tree();
 
     glFlush();
 }
