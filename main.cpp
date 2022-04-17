@@ -37,17 +37,41 @@ void field_1(){
 }
 
 
+void roadStrips()
+{
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2f(-0.95, -0.30);
+    glVertex2f(-0.95, -0.32);
+    glVertex2f(-0.65, -0.32);
+    glVertex2f(-0.65, -0.30);
+    glEnd();
+}
+
 void road(){
     //Main road lane 1
     glBegin(GL_QUADS);
     glColor3f(0.412, 0.412, 0.412);
-    glVertex2f(-1.0, -0.05);
-    glVertex2f(-1.0, -0.57);
-    glVertex2f(1.0, -0.57);
-    glVertex2f(1.0, -0.05);
+    glVertex2f(-1.0, -0.12);
+    glVertex2f(-1.0, -0.50);
+    glVertex2f(1.0, -0.50);
+    glVertex2f(1.0, -0.12);
     glEnd();
-}
+    //Main Road Strips 1
+    roadStrips();
 
+    //Main Road Strips 2
+    glPushMatrix();
+    glTranslatef(0.40,0,0);
+    roadStrips();
+    glTranslatef(0.40,0,0);
+    roadStrips();
+    glTranslatef(0.40,0,0);
+    roadStrips();
+    glTranslatef(0.40,0,0);
+    roadStrips();
+    glPopMatrix();
+}
 void field_2(){
 
     //field 2
@@ -213,6 +237,95 @@ void twin_tower(){
     glEnd();
 }
 
+void road_light()
+{
+    //Road lights
+    glBegin(GL_POLYGON);
+     glColor3f(0.0f,0.0f,0.0f);
+     glVertex2f(-0.8f, -1.0f);
+     glVertex2f(-0.8f, 0.5f);
+     glVertex2f(-0.87f, 0.5f);
+     glVertex2f(-0.87f, -1.0f);
+    glEnd();
+
+    //Road lights
+    glBegin(GL_POLYGON);
+     glColor3f(0.0f, 0.0f, 0.0f);
+     glVertex2f(-0.8f, 0.5f);
+     glVertex2f(-0.6f, 0.65f);
+     glVertex2f(-0.6f, 0.7f);
+     glVertex2f(-0.87f, 0.5f);
+    glEnd();
+
+    //Road Lights
+    glBegin(GL_POLYGON);
+     glColor3f(0.0f, 0.0f, 0.0f);
+     glVertex2f(-0.6f, 0.7f);
+     glVertex2f(-0.3f, 0.7f);
+     glVertex2f(-0.3f, 0.65);
+     glVertex2f(-0.6f, 0.65f);
+    glEnd();
+
+    //Lights
+    glBegin(GL_POLYGON);
+    glColor3f(0.90f, 0.90f, 0.0f);
+
+     glVertex2f(-0.5f, 0.65f);
+     glVertex2f(-0.3f, 0.65f);
+     glVertex2f(-0.3f, 0.55f);
+     glVertex2f(-0.5f, 0.55f);
+    glEnd();
+
+    //base
+    glBegin(GL_POLYGON);
+     glColor3f(0.90f, 0.90f, 0.80f);
+     glVertex2f(-0.9f, -1.0f);
+     glVertex2f(-0.9f, -0.9f);
+     glVertex2f(-0.7f, -0.9f);
+     glVertex2f(-0.7f, -1.0f);
+    glEnd();
+}
+
+void road_lamp_one_side()
+{
+    //Lamp 1
+    glPushMatrix();
+    glLoadIdentity();
+    glScalef(0.2f, 0.2f, 0.0f);
+    glTranslatef(-3.0f, 0.52f, 0.0f);
+    road_light();
+
+    //Lam Stand 2
+    glTranslatef(3.1f, 0.f, 0.0f);
+    road_light();
+
+    //Lam Stand 3
+    glTranslatef(3.1f, 0.f, 0.0f);
+    road_light();
+
+    glPopMatrix();
+}
+
+void road_lamp_another_side(){
+
+    //Lam Stand - 1
+    glPushMatrix();
+    glLoadIdentity();
+    glScalef(0.2f, 0.2f, 0.0f);
+    glTranslatef(-1.45f, -1.5f, 0.0f);
+    road_light();
+
+    //Lam Stand - 2
+    glTranslatef(3.1f, 0.f, 0.0f);
+    road_light();
+
+    //Lam Stand - 3
+    glTranslatef(3.1f, 0.f, 0.0f);
+    road_light();
+
+    glPopMatrix();
+}
+
 
 void myInit (void){
     glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -232,6 +345,8 @@ void myDisplay(void){
     field_2();
     river();
     twin_tower();
+    road_lamp_one_side();
+    road_lamp_another_side();
 
     glFlush();
 }
