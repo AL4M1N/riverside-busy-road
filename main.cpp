@@ -450,15 +450,27 @@ void field_1(){
     //field 1
     glBegin(GL_QUADS);
     glColor3f(0.196, 0.804, 0.196);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.125f, 0.494f, 0.125f);
+    }
     glVertex2f(1.0, -0.05);
 
     glColor3f(0.000, 1.000, 0.000);
     glVertex2f(-1.0, -0.05);
 
     glColor3f(0.486, 0.988, 0.000);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.247f, 0.501f, 0.000f);
+    }
     glVertex2f(-1.0, 0.135);
 
     glColor3f(0.498, 1.000, 0.000);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.4f, 0.8f, 0.000f);
+    }
     glVertex2f(1.0, 0.135);
 
     glEnd();
@@ -470,15 +482,27 @@ void field_2(){
     //field 2
     glBegin(GL_QUADS);
     glColor3f(0.196, 0.804, 0.196);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.125f, 0.494f, 0.125f);
+    }
     glVertex2f(1.0, -0.57);
 
     glColor3f(0.000, 1.000, 0.000);
     glVertex2f(-1.0, -0.57);
 
     glColor3f(0.486, 0.988, 0.000);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.247f, 0.501f, 0.000f);
+    }
     glVertex2f(-1.0, -0.73);
 
     glColor3f(0.498, 1.000, 0.000);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.4f, 0.8f, 0.000f);
+    }
     glVertex2f(1.0, -0.73);
     glEnd();
 }
@@ -486,15 +510,31 @@ void field_2(){
 void river(){
     glBegin(GL_QUADS);
     glColor3f(0.000, 1.000, 1.000);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.0f, 0.78f, 0.78f);
+    }
     glVertex2f(1.0, -0.73);
 
     glColor3f(0.686, 0.933, 0.933);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.196f, 0.823f, 0.823f);
+    }
     glVertex2f(-1.0, -0.73);
 
     glColor3f(0.498, 1.000, 0.831);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.007f, 0.654f, 0.435f);
+    }
     glVertex2f(-1.0, -1.0);
 
     glColor3f(0.282, 0.820, 0.800);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.117f, 0.462f, 0.450f);
+    }
     glVertex2f(1.0, -1.0);
 
     glEnd();
@@ -625,10 +665,18 @@ void mountain()
     glEnable ( GL_COLOR_MATERIAL ) ;
     glBegin(GL_TRIANGLES);
      glColor3f(0.0, 0.5, 0.0);
+     if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.0f, 0.380f, 0.0f);
+    }
      glVertex2f(-1.0f, -1.0f);
      glColor3f(1.0, 1.0, 1.0);
      glVertex2f(0.0f, 1.0f);
      glColor3f(0.0, 0.5, 0.0);
+     if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(0.0f, 0.380f, 0.0f);
+    }
      glVertex2f(1.0f, -1.0f);
     glEnd();
 }
@@ -1655,7 +1703,11 @@ void road_light()
 
     //Lights
     glBegin(GL_POLYGON);
-    glColor3f(0.90f, 0.90f, 0.0f);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    if(_move_sun<0.10 || _move_sun>0.90)
+    {
+        glColor3f(2.00f, 2.00f, 0.0f);
+    }
 
      glVertex2f(-0.5f, 0.65f);
      glVertex2f(-0.3f, 0.65f);
