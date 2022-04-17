@@ -82,6 +82,121 @@ void river(){
     glEnd();
 }
 
+void red_building(){
+    //Red Building
+    glBegin(GL_QUADS);
+    glColor3f(0.698, 0.133, 0.133);
+    glVertex2f(-0.95, -0.05);
+    glVertex2f(-0.75, -0.05);
+    glVertex2f(-0.75, 0.45);
+    glVertex2f(-0.95, 0.45);
+
+    //Door of Red Building
+    glBegin(GL_QUADS);
+    glColor3f(1.000, 0.894, 0.882);
+    glVertex2f(-0.90, -0.05);
+    glVertex2f(-0.80, -0.05);
+    glVertex2f(-0.80, 0.15);
+    glVertex2f(-0.90, 0.15);
+
+    //2 Window of Red Building
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 1.0);;
+    glVertex2f(-0.93, 0.26);
+    glVertex2f(-0.88, 0.26);
+    glVertex2f(-0.88, 0.36);
+    glVertex2f(-0.93, 0.36);
+
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2f(-0.82, 0.26);
+    glVertex2f(-0.77, 0.26);
+    glVertex2f(-0.77, 0.36);
+    glVertex2f(-0.82, 0.36);
+
+    //Roof top of red building
+    glBegin(GL_QUADS);
+    glColor3f(0.502, 0.000, 0.000);
+    glVertex2f(-0.93, 0.45);
+    glVertex2f(-0.87, 0.45);
+    glVertex2f(-0.87, 0.52);
+    glVertex2f(-0.93, 0.52);
+
+    glBegin(GL_QUADS);
+    glColor3f(0.647, 0.165, 0.165);
+    glVertex2f(-0.94, 0.52);
+    glVertex2f(-0.86, 0.52);
+    glVertex2f(-0.86, 0.54);
+    glVertex2f(-0.94, 0.54);
+
+    glEnd();
+}
+
+void blue_building(){
+    //Blue Building
+    glBegin(GL_QUADS);
+    glColor3f(0,0,1);
+    glVertex2f(-0.65, -0.05);
+    glVertex2f(-0.45, -0.05);
+    glVertex2f(-0.45, 0.45);
+    glVertex2f(-0.65, 0.45);
+
+    //Door of blue building
+    glBegin(GL_QUADS);
+    glColor3f(1.000, 0.894, 0.882);
+    glVertex2f(-0.63, -0.05);
+    glVertex2f(-0.57, -0.05);
+    glVertex2f(-0.57, 0.15);
+    glVertex2f(-0.63, 0.15);
+
+    //Little window of blue building
+    glBegin(GL_QUADS);
+    glColor3f(1.0, 1.0, 1.0);
+    glVertex2f(-0.53, 0.03);
+    glVertex2f(-0.48, 0.03);
+    glVertex2f(-0.48, 0.13);
+    glVertex2f(-0.53, 0.13);
+
+    //Big window of blue building
+    glBegin(GL_QUADS);
+    glColor3f(0.686, 0.933, 0.933);
+    glVertex2f(-0.63, 0.25);
+    glVertex2f(-0.47, 0.25);
+    glVertex2f(-0.47, 0.36);
+    glVertex2f(-0.63, 0.36);
+
+    glBegin(GL_QUADS);
+    glColor3f(0.647, 0.165, 0.165);
+    glVertex2f(-0.63, 0.31);
+    glVertex2f(-0.63, 0.30);
+    glVertex2f(-0.47, 0.30);
+    glVertex2f(-0.47, 0.31);
+
+    glBegin(GL_QUADS);
+    glColor3f(0.647, 0.165, 0.165);
+    glVertex2f(-0.555, 0.36);
+    glVertex2f(-0.555, 0.25);
+    glVertex2f(-0.545, 0.25);
+    glVertex2f(-0.545, 0.36);
+
+    //Roof top of blue building
+    glBegin(GL_QUADS);
+    glColor3f(0.502, 0.000, 0.000);
+    glVertex2f(-0.46, 0.45);
+    glVertex2f(-0.52, 0.45);
+    glVertex2f(-0.52, 0.52);
+    glVertex2f(-0.46, 0.52);
+
+    glBegin(GL_QUADS);
+    glColor3f(0.647, 0.165, 0.165);
+    glVertex2f(-0.45, 0.52);
+    glVertex2f(-0.53, 0.52);
+    glVertex2f(-0.53, 0.54);
+    glVertex2f(-0.45, 0.54);
+
+    glEnd();
+}
+
 void tree1()
 {
     glBegin(GL_POLYGON);
@@ -291,6 +406,78 @@ void park_tree()
     glPopMatrix();
 }
 
+void boat(){
+glPushMatrix();//start_pushpop
+glLoadIdentity();
+    glTranslatef(0.0f, 0.0f, 0.0f);
+        glTranslatef(0.0, -1.05, 0.0);
+        glScalef(0.55, 0.55, 0);
+        glPushMatrix();
+        glColor3f(0.647, 0.165, 0.165);
+        glBegin(GL_QUADS);
+        glVertex2f(0.35, 0.35);
+        glVertex2f(0.75, 0.35);
+        glVertex2f(0.95, 0.45);
+        glVertex2f(0.15, 0.45);
+
+        glEnd();
+        glPopMatrix();
+
+        glPushMatrix();
+        glLoadIdentity();
+        glTranslatef(0.0f, 0.0f, 0.0f);
+        glTranslatef(0.12, -1.03, 0.0);
+        glScalef(0.50, 0.50, 0);
+        glColor3f(0.948,0.934,0.734);
+        glBegin(GL_QUADS);
+        glVertex2f(0.55, 0.45);
+        glVertex2f(0.15, 0.45);
+        glVertex2f(0.15, 0.65);
+        glVertex2f(0.55, 0.65);
+
+        glEnd();
+        glPopMatrix();
+
+
+    glPopMatrix();
+}
+
+void ship(){
+    glPushMatrix();//start_pushpop
+    glTranslatef(0.0f, 0.0f, 0.0f);
+        glColor3f(0.647, 0.165, 0.165);
+        glBegin(GL_POLYGON);
+        glVertex2f(-0.75, -0.98);
+        glVertex2f(-0.45, -0.98);
+        glVertex2f(-0.40, -0.83);
+        glVertex2f(-0.80, -0.83);
+        glEnd();
+        glPopMatrix();
+
+    glPushMatrix();//start_pushpop
+    glTranslatef(0.0f, 0.0f, 0.0f);
+        glColor3f(1.000, 1.000, 0.941);
+        glBegin(GL_POLYGON);
+        glVertex2f(-0.70, -0.83);
+        glVertex2f(-0.45, -0.83);
+        glVertex2f(-0.45, -0.75);
+        glVertex2f(-0.70, -0.75);
+        glEnd();
+        glPopMatrix();
+
+    glPushMatrix();//start_pushpop
+    glTranslatef(0.0f, 0.0f, 0.0f);
+        glColor3f(1.000, 0.980, 0.941);
+        glBegin(GL_POLYGON);
+        glVertex2f(-0.60, -0.75);
+        glVertex2f(-0.50, -0.75);
+        glVertex2f(-0.50, -0.65);
+        glVertex2f(-0.60, -0.65);
+        glEnd();
+        glPopMatrix();
+
+}
+
 
 void myInit (void){
     glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -309,7 +496,11 @@ void myDisplay(void){
     road();
     field_2();
     river();
+    red_building();
+    blue_building();
     park_tree();
+    boat();
+    ship();
 
     glFlush();
 }
@@ -333,4 +524,3 @@ int main(int argc, char** argv){
     glutMainLoop();
 
 }
-
