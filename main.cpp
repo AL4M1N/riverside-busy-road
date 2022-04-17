@@ -326,6 +326,42 @@ void road_lamp_another_side(){
     glPopMatrix();
 }
 
+void building_side_road(){
+    //Building side road
+    glBegin(GL_QUADS);
+    glColor3f(0.753, 0.753, 0.753);
+    glVertex2f(-1.0, -0.05);
+    glVertex2f(-1.0, -0.12);
+    glVertex2f(1.0, -0.12);
+    glVertex2f(1.0, -0.05);
+
+    glBegin(GL_QUADS);
+    glColor3f(0.502, 0.502, 0.502);
+    glVertex2f(-1.0, -0.10);
+    glVertex2f(-1.0, -0.12);
+    glVertex2f(1.0, -0.12);
+    glVertex2f(1.0, -0.10);
+    glEnd();
+}
+
+void park_side_road(){
+    //River side road
+    glBegin(GL_QUADS);
+    glColor3f(0.753, 0.753, 0.753);
+    glVertex2f(-1.0, -0.50);
+    glVertex2f(-1.0, -0.57);
+    glVertex2f(1.0, -0.57);
+    glVertex2f(1.0, -0.50);
+
+    glBegin(GL_QUADS);
+    glColor3f(0.502, 0.502, 0.502);
+    glVertex2f(-1.0, -0.55);
+    glVertex2f(-1.0, -0.57);
+    glVertex2f(1.0, -0.57);
+    glVertex2f(1.0, -0.55);
+    glEnd();
+}
+
 
 void myInit (void){
     glClearColor(1.0, 1.0, 1.0, 0.0);
@@ -345,8 +381,10 @@ void myDisplay(void){
     field_2();
     river();
     twin_tower();
+    building_side_road();
     road_lamp_one_side();
     road_lamp_another_side();
+    park_side_road();
 
     glFlush();
 }
